@@ -53,3 +53,61 @@ a[href*="#estimate"].button {
   header nav           { order: 3; flex: 1 1 100%; }
   header nav ul        { justify-content: flex-start; gap: 14px; }
 }
+/* --- Force header layout on mobile --- */
+header {
+  width: 100%;
+}
+
+header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+header nav {
+  flex: 1;
+  text-align: center;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .brand {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+header .cta,
+header .button,
+a.button[href*="estimate"],
+a[href*="#estimate"].button {
+  flex: 1;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  header .wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  header nav {
+    order: 3;
+    flex: 1 1 100%;
+    text-align: left;
+  }
+  header nav ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
