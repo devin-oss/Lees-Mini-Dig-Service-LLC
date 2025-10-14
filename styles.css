@@ -64,3 +64,57 @@ header nav a{ white-space:nowrap; }
     margin-left:auto;
   }
 }
+/* ===== MOBILE HEADER HOTFIX (place after your current CSS) ===== */
+
+/* Reserve space for sticky header so content doesn't sit under it */
+:root { --headerH: 64px; }
+body { padding-top: var(--headerH); }
+header { min-height: var(--headerH); }
+
+/* If your links aren't inside <nav>, this styles any top links inside header too */
+header a { color: var(--text); text-decoration: none; }
+header a:hover { text-decoration: underline; }
+
+/* Make sure header children don't collapse or overlap */
+header .wrap > * { min-width: 0; }          /* prevents flex overflow weirdness */
+header .wrap { row-gap: 10px; }             /* breathing room when wrapping */
+
+/* MOBILE: force 2-row structure */
+@media (max-width:768px){
+  /* First item (logo/title) takes left of row 1 */
+  header .wrap > *:first-child{
+    order:1; flex:1 1 auto;
+  }
+
+  /* CTA/Button sits on right of row 1 and never stretches */
+  header .wrap > a.button,
+  header .wrap > .button,
+  header .wrap > .cta,
+  header .wrap > a[href*="estimate"]{
+    order:2; margin-left:auto; flex:0 0 auto;
+  }
+
+  /* Nav occupies full row 2 */
+  header .wrap > nav{
+    order:3; flex:0 0 100%;
+  }
+  header nav ul{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin:0; padding:0; list-style:none;
+    justify-content:flex-start;
+  }
+  header nav a{
+    display:inline-block; padding:10px 12px; border-radius:10px;
+  }
+}
+
+/* DESKTOP: single-line keeps CTA far right */
+@media (min-width:769px){
+  header .wrap{ flex-wrap:nowrap; }
+  header .wrap > nav{ flex:0 1 auto; }
+  header .wrap > a.button,
+  header .wrap > .button,
+  header .wrap > .cta,
+  header .wrap > a[href*="estimate"]{ margin-left:auto; }
+}
+
