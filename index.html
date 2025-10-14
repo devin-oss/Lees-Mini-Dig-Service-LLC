@@ -141,48 +141,6 @@
 </body>
 </html>
 
-/* --- Header layout & mobile fix --- */
-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-header nav ul {
-  display: flex;
-  gap: 16px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-header nav a {
-  white-space: nowrap;
-}
-
-header .cta,
-header .button,
-a.button[href*="estimate"],
-a[href*="#estimate"].button {
-  margin-left: auto;
-}
-
-@media (max-width: 640px) {
-  header .wrap { row-gap: 8px; }
-
-  header .brand        { order: 1; flex: 1 1 auto; }
-  header .cta,
-  header .button,
-  a.button[href*="estimate"],
-  a[href*="#estimate"].button {
-    order: 2;
-  }
-  header nav           { order: 3; flex: 1 1 100%; }
-  header nav ul        { justify-content: flex-start; gap: 14px; }
-}
 
 
 
