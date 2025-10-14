@@ -10,3 +10,46 @@ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,
 .gallery-item{background:#111827;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .gallery-item img{display:block;width:100%;height:auto}
 .gallery-item figcaption{padding:10px 12px;color:#cbd5e1;font-size:14px}
+
+/* --- Header layout & mobile fix --- */
+header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+header nav ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  white-space: nowrap;
+}
+
+header .cta,
+header .button,
+a.button[href*="estimate"],
+a[href*="#estimate"].button {
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  header .wrap { row-gap: 8px; }
+
+  header .brand        { order: 1; flex: 1 1 auto; }
+  header .cta,
+  header .button,
+  a.button[href*="estimate"],
+  a[href*="#estimate"].button {
+    order: 2;
+  }
+  header nav           { order: 3; flex: 1 1 100%; }
+  header nav ul        { justify-content: flex-start; gap: 14px; }
+}
