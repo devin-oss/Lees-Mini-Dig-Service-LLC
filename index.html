@@ -7,7 +7,6 @@
   <meta name="description" content="Small Machine. Big Results. Trenching, drainage, and small-scale excavation in Hermiston, OR + 50 miles. Call 541-701-7683.">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* inline gallery styles to guarantee visibility */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
     .gallery-item{background:#111827;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .gallery-item img{display:block;width:100%;height:auto}
@@ -46,7 +45,7 @@
           <p style="color:#cbd5e1;margin:0 0 16px">Serving Hermiston, Oregon + 50 miles</p>
           <div>
             <a href="tel:+15417017683" style="padding:10px 16px;background:#22c55e;color:#0b1020;border-radius:12px;font-weight:700;text-decoration:none;margin-right:10px">Call 541-701-7683</a>
-            <a style="padding:10px 16px;background:#1f2937;color:#e5e7eb;border-radius:12px;border:1px solid rgba(255,255,255,.18);text-decoration:none" href="mailto:Leesminidigservice@outlook.com?subject=Estimate%20Request%20-%20Lee%27s%20Mini%20Dig%20Service&body=Name:%0APhone:%0AAddress%20(City/Area):%0AService%20Needed:%20Trenching/Drainage/Light%20Grading/Subcontract%20Support%0AJob%20Details:%20Linear%20feet,%20depth,%20access,%20soil,%20timeline...%0A">Email</a>
+            <a href="#estimate" style="padding:10px 16px;background:#1f2937;color:#e5e7eb;border-radius:12px;border:1px solid rgba(255,255,255,.18);text-decoration:none">Email</a>
           </div>
         </div>
       </div>
@@ -57,10 +56,10 @@
       <div class="wrap">
         <h2 class="h1">Services</h2>
         <div class="gallery-grid">
-          <div class="gallery-item"><div style="padding:18px"><h3 style="margin:0 0 8px">Trenching</h3><p class="muted">Utilities, irrigation, conduit — tight access specialist with a 2-ton excavator.</p></div></div>
-          <div class="gallery-item"><div style="padding:18px"><h3 style="margin:0 0 8px">Drainage</h3><p class="muted">French drains, dry wells, downspout tie-ins, and slope corrections.</p></div></div>
-          <div class="gallery-item"><div style="padding:18px"><h3 style="margin:0 0 8px">Light Grading</h3><p class="muted">Fine grading, pad prep, backfill, and clean-ups.</p></div></div>
-          <div class="gallery-item"><div style="padding:18px"><h3 style="margin:0 0 8px">Subcontract Support</h3><p class="muted">Reliable small-scale excavation for plumbers, electricians, landscapers, and builders.</p></div></div>
+          <div class="gallery-item"><div style="padding:18px"><h3>Trenching</h3><p class="muted">Utilities, irrigation, conduit — tight access specialist with a 2-ton excavator.</p></div></div>
+          <div class="gallery-item"><div style="padding:18px"><h3>Drainage</h3><p class="muted">French drains, dry wells, downspout tie-ins, and slope corrections.</p></div></div>
+          <div class="gallery-item"><div style="padding:18px"><h3>Light Grading</h3><p class="muted">Fine grading, pad prep, backfill, and clean-ups.</p></div></div>
+          <div class="gallery-item"><div style="padding:18px"><h3>Subcontract Support</h3><p class="muted">Reliable small-scale excavation for plumbers, electricians, landscapers, and builders.</p></div></div>
         </div>
       </div>
     </section>
@@ -74,19 +73,14 @@
             <p>10+ years of excavation experience operating excavators, dozers, loaders, haul trucks, and more. Focused on precise trenching and drainage work with a compact machine for minimal ground impact.</p>
             <ul style="margin:0 0 0 18px;color:#cbd5e1">
               <li>2-ton excavator with thumb</li>
-              <li>6&quot; &amp; 14&quot; buckets, 3 ft tilting bucket, rake attachment</li>
+              <li>6" & 14" buckets, 3 ft tilting bucket, rake attachment</li>
               <li>Service radius: Hermiston, OR + 50 miles</li>
               <li>Clear communication and dependable scheduling</li>
             </ul>
           </div></div>
-         
-          </div></div>
         </div>
       </div>
     </section>
-
-
-
 
     <!-- ESTIMATE -->
     <section id="estimate" class="section">
@@ -94,21 +88,47 @@
         <h2 class="h1">Request an Estimate</h2>
         <div class="gallery-grid">
           <div class="gallery-item"><div style="padding:18px">
-            <p><strong>Fastest response:</strong> call or text <a href="tel:+15417017683">541-701-7683</a>. Or click below to open your email app with a pre-filled template.</p>
-            <p><a style="padding:10px 16px;background:#22c55e;color:#0b1020;border-radius:12px;font-weight:700;text-decoration:none" href="mailto:Leesminidigservice@outlook.com?subject=Estimate%20Request%20-%20Lee%27s%20Mini%20Dig%20Service&body=Name:%0APhone:%0AAddress%20(City/Area):%0AService%20Needed:%20Trenching/Drainage/Light%20Grading/Subcontract%20Support%0AJob%20Details:%20Linear%20feet,%20depth,%20access,%20soil,%20timeline...%0A">Email My Request</a></p>
-          </div></div>
-          <div class="gallery-item"><div style="padding:18px">
-            <form onsubmit="window.location.href='mailto:Leesminidigservice@outlook.com?subject=Estimate%20Request%20-%20Lee%27s%20Mini%20Dig%20Service&body=' + encodeURIComponent('Name: ' + document.getElementById('f_name').value + '\\nPhone: ' + document.getElementById('f_phone').value + '\\nAddress (City/Area): ' + document.getElementById('f_addr').value + '\\nService Needed: ' + document.getElementById('f_service').value + '\\nJob Details: ' + document.getElementById('f_details').value); return false;">
+            <p><strong>Fastest response:</strong> call or text <a href="tel:+15417017683">541-701-7683</a>. Or fill out the form below and we’ll reply soon.</p>
+
+            <form name="estimate" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?submitted=1">
+              <input type="hidden" name="form-name" value="estimate">
+              <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
-                <div><label for="f_name">Name</label><input id="f_name" type="text" placeholder="Your name" required></div>
-                <div><label for="f_phone">Phone</label><input id="f_phone" type="tel" placeholder="541-701-7683"></div>
-                <div style="grid-column:1/-1"><label for="f_addr">Address (City/Area)</label><input id="f_addr" type="text" placeholder="Hermiston / Umatilla / Stanfield"></div>
-                <div><label for="f_service">Service Needed</label>
-                  <select id="f_service"><option>Trenching</option><option>Drainage</option><option>Light Grading</option><option>Subcontract Support</option></select>
+                <div>
+                  <label for="f_name">Name</label>
+                  <input id="f_name" name="name" type="text" placeholder="Your name" required>
                 </div>
-                <div><label for="f_details">Job Details</label><textarea id="f_details" placeholder="Linear feet, depth, access, soil, timeline..."></textarea></div>
+
+                <div>
+                  <label for="f_phone">Phone</label>
+                  <input id="f_phone" name="phone" type="tel" placeholder="541-701-7683" pattern="[\d\s\-\(\)\+]{7,}" required>
+                </div>
+
+                <div style="grid-column:1/-1">
+                  <label for="f_addr">Address (City/Area)</label>
+                  <input id="f_addr" name="city_area" type="text" placeholder="Hermiston / Umatilla / Stanfield">
+                </div>
+
+                <div>
+                  <label for="f_service">Service Needed</label>
+                  <select id="f_service" name="service">
+                    <option>Trenching</option>
+                    <option>Drainage</option>
+                    <option>Light Grading</option>
+                    <option>Subcontract Support</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="f_details">Job Details</label>
+                  <textarea id="f_details" name="details" rows="5" placeholder="Linear feet, depth, access, soil, timeline..."></textarea>
+                </div>
               </div>
-              <div style="margin-top:14px"><button type="submit" style="padding:10px 16px;background:#22c55e;color:#0b1020;border-radius:12px;font-weight:700;border:0">Email My Request</button></div>
+
+              <div style="margin-top:14px">
+                <button type="submit" style="padding:10px 16px;background:#22c55e;color:#0b1020;border-radius:12px;font-weight:700;border:0">Send Request</button>
+              </div>
             </form>
           </div></div>
         </div>
@@ -133,16 +153,8 @@
       <div>© 2025 Lee's Mini Dig Service LLC • Hermiston, Oregon</div>
       <div>541-701-7683 • <a href="mailto:Leesminidigservice@outlook.com">Leesminidigservice@outlook.com</a></div>
     </div>
-     <a href="https://www.facebook.com/LeesMiniDigServiceLLC" target="_blank" style="color:#22c55e;text-decoration:none;">
-        🌐 Facebook
-      </a>
-    </div>
+    <a href="https://www.facebook.com/LeesMiniDigServiceLLC" target="_blank" style="color:#22c55e;text-decoration:none;">🌐 Facebook</a>
   </footer>
 </body>
 </html>
-
-
-
-
-
 
